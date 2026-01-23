@@ -1,5 +1,6 @@
 // Imports 
 import express from 'express';
+import db from "./database/database.js";
 
 // Data 
 
@@ -13,12 +14,25 @@ const PORT = 3000;
 // Routes 
 
 //POST
+// test route 
+app.post("/", (req, res) => {
+    res.send("Testing post")
+});
 
 // GET 
+app.get("/", (req, res) => {
+    res.send("Testing")
+});
 
 // PUT
+app.put("/", (req, res) => {
+    res.send("Testing Update")
+});
 
 // DELETE
+app.delete("/", (req, res) => {
+    res.send("Testing Delete")
+});
 
 
 
