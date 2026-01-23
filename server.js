@@ -4,12 +4,23 @@ import express from 'express';
 // Data 
 
 // setups 
-const app = express();
+
+const app = express(); //instantiate express into variable 
 const PORT = 3000;
 
 // Middleware 
 
 // Routes 
+
+//POST
+
+// GET 
+
+// PUT
+
+// DELETE
+
+
 
 // Global Err Handling Middleware 
 app.use("/", (err, req, res, next) => {
