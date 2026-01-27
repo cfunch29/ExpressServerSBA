@@ -1,13 +1,14 @@
 // Imports 
 import express from 'express';
 import mainRoutes from "./routes/mainRoutes.js"
-import db from "./database/database.js";
+import contacts from "./database/contacts.js";
+import posts from './database/posts.js';
 import { globalErr } from './middleware/middlewares.js';
+
 
 // Data 
 
 // setups 
-
 const app = express(); //instantiate express into variable 
 const PORT = 3000;
 
@@ -16,6 +17,9 @@ const PORT = 3000;
 app.use(express.json()); //Parses the req body so we can use 
 
 // Routes 
+app.get("/home", (req, res) => {
+
+});
 app.use("/", mainRoutes);
 
 //POST

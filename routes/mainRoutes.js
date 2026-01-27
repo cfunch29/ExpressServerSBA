@@ -4,13 +4,14 @@ import express from 'express';
 //instantiate router
 const router = express.Router();
 
+
 //GET & POST ROUTES
 router.
 route("/").
 get((req, res) => {
-    res.send("Testing")
+    res.send("Get User")
 }).post((req, res) => {
-    res.send("Testing post")
+    res.send("Add User")
 });
 
 //PUT & DELETE Routes
@@ -18,9 +19,9 @@ get((req, res) => {
 router.
 route("/:id").
 put((req, res) => {
-    res.send("Testing Update")
+    res.send("Update User")
 }).delete((req, res) => {
-    res.send("Testing Delete")
+    res.send("Delete User")
 });
 
 
