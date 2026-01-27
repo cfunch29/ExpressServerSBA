@@ -1,5 +1,6 @@
 // Imports 
 import express from 'express';
+import mainRoutes from "./routes/mainRoutes.js"
 import db from "./database/database.js";
 import { globalErr } from './middleware/middlewares.js';
 
@@ -15,27 +16,28 @@ const PORT = 3000;
 app.use(express.json()); //Parses the req body so we can use 
 
 // Routes 
+app.use("/", mainRoutes);
 
 //POST
 // test route 
-app.post("/", (req, res) => {
-    res.send("Testing post")
-});
+// app.post("/", (req, res) => {
+//     res.send("Testing post")
+// });
 
-// GET 
-app.get("/", (req, res) => {
-    res.send("Testing")
-});
+// // GET 
+// app.get("/", (req, res) => {
+//     res.send("Testing")
+// });
 
 // PUT
-app.put("/", (req, res) => {
-    res.send("Testing Update")
-});
+// app.put("/", (req, res) => {
+//     res.send("Testing Update")
+// });
 
-// DELETE
-app.delete("/", (req, res) => {
-    res.send("Testing Delete")
-});
+// // DELETE
+// app.delete("/", (req, res) => {
+//     res.send("Testing Delete")
+// });
 
 
 // Global Err Handling Middleware 
