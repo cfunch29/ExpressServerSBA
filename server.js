@@ -1,10 +1,16 @@
 // Imports 
 import express from 'express';
+
+//import routes that were separated out 
 import mainRoutes from "./routes/mainRoutes.js"
+
+//import data from database files 
 import contacts from "./database/contacts.js";
 import posts from './database/posts.js';
-import { globalErr } from './middleware/middlewares.js';
 
+//import middleware that were separated out
+import { globalErr } from './middleware/middlewares.js';
+import logReq from './middleware/logReq.js';
 
 // Data 
 
@@ -13,6 +19,10 @@ const app = express(); //instantiate express into variable
 const PORT = 3000;
 
 // Middleware 
+
+//request log time and req method
+app.use(logReq);
+
 // app.use(function(){})
 app.use(express.json()); //Parses the req body so we can use 
 
@@ -20,6 +30,8 @@ app.use(express.json()); //Parses the req body so we can use
 app.get("/home", (req, res) => {
 
 });
+
+
 app.use("/", mainRoutes);
 
 //POST
