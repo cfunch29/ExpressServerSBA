@@ -1,6 +1,7 @@
 // Imports 
 import express from 'express';
 import db from "./database/database.js";
+import { globalErr } from './middleware/middlewares.js';
 
 // Data 
 
@@ -10,6 +11,8 @@ const app = express(); //instantiate express into variable
 const PORT = 3000;
 
 // Middleware 
+// app.use(function(){})
+app.use(express.json()); //Parses the req body so we can use 
 
 // Routes 
 
@@ -35,12 +38,8 @@ app.delete("/", (req, res) => {
 });
 
 
-
 // Global Err Handling Middleware 
-app.use("/", (err, req, res, next) => {
-    console.log(err.message)
-    res.status(err.status || 500).json({error: err.message});
-})
+app.use(globalErr);
 
 // Listen 
 app.listen(PORT, () => {
