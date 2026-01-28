@@ -1,4 +1,4 @@
-const contacts = [
+export default [
     {id: 1, 
     name: "Jane",
     username: "jadoe1",
@@ -22,4 +22,3 @@ const contacts = [
 ];
 
 
-export default [];
