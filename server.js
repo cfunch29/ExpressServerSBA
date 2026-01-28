@@ -2,13 +2,13 @@
 import express from 'express';
 
 //import routes that were separated out 
-import mainRoutes from "./routes/contactRoutes.js"
 import contactRoutes from "./routes/contactRoutes.js"
 import postRoutes from "./routes/postRoutes.js"
+import db from "./database/comments.js"
 
 
 //import data from database files 
-import db from "./database/comments.js"
+
 // import contacts from "./database/contacts.js";
 // import posts from './database/posts.js';
 
@@ -36,11 +36,10 @@ app.use(logReq);
 
 // Routes 
 
-// app.get("/home", (req, res) => {
-//     res.render("index")
-// });
+app.get("/", (req, res) => {
+    res.send("Home")
+});
 
-app.use("/", mainRoutes);
 app.use("/api/contacts", contactRoutes);
 app.use("/api/posts", postRoutes);
 // app.use("/api/comments", db);
